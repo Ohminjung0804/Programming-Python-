@@ -46,7 +46,7 @@ class Drink:
         self.set_suger()
 
     def __str__(self):
-        return f'이름: {self.name}\t가격: {self.price}\t컵사이즈:{Drink._CUPS[self.cup]}\t얼음량:{Drink._ICES[self.ice]}\t당도:{Drink._SUGARS[self.suger]}'
+        return f'이름: {self.name}\t가격: {self.price}원\t컵사이즈: {Drink._CUPS[self.cup]}\t얼음량: {Drink._ICES[self.ice]}\t당도: {Drink._SUGARS[self.sugar]}'
 
 
 class Coffee(Drink):
@@ -54,13 +54,38 @@ class Coffee(Drink):
 
 class Bubbletea(Drink):
     _PEARLS=('타피오카','화이트','알로에','젤리')
-    def __init__(self):
+    def __init__(self,name,price):
+        super().__init__(name,price)
         #부모초기화호출
         self.peal=0
+
+    def set_pearl(self):
+        for index,pearl in enumerate(Drink._PEARLS):
+            print(f'{index+1}:{pearl}')
+
+        pearl=input('펄을 선택하세요: ')
+        self.pearl=0 if pearl=='' else int(pearl)-1
+
+    def order(self):
+        Drink.order()
+        self.set_pearl()
+    def __str__(self):
+        result = super().__str__()
+        return result+f'펄종류: {Bubbletea._PEARLS[self.pearl]}'
+
+
+class Order:
+    def __init__(self):
+        pass
     def __str__(self):
         pass
+    def init_menu(self):
+        pass
+    def sum_price(self):
+        pass
+    def order_drink(self):
+        pass
 
-
-민정이꺼 = Coffee('카페모카',2500)
-민정이꺼.order()
-print(민정이꺼)
+#민정이꺼 = Coffee('카페모카',2500)
+#민정이꺼.order()
+#print(민정이꺼)
