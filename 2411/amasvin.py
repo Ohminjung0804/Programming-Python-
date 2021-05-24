@@ -76,16 +76,47 @@ class Bubbletea(Drink):
 
 class Order:
     def __init__(self):
-        pass
+        self.menu = [] #self.menu 매장에 있는 음료수 전체
+        self.init_menu()
     def __str__(self):
-        pass
+        s='-'*20+'주문내역'+'-'*20  #주문내역 제목보여주자
+        for drink in self.order_menu:
+            s+=str(drink) #주문한 음료수 목록 보여주자
+        s+=f'총금액: {self.sum_price()}원' #가격 총합계보여주자
+        return s
     def init_menu(self):
-        pass
+        사랑이꺼 = Coffee('카페모카',2500)
+        하람이꺼 = Bubbletea('오레오 쉐이크',3900)
+        에스더꺼 = Bubbletea('타로 밀크티',3300)
+        self.menu.append(사랑이꺼)
+        self.menu.append(하람이꺼)
+        self.menu.append(에스더꺼)
+
+    def show_menu(self):
+        for index, drink in enumerate(self.menu):
+            print(f'{index+1}: {drink}\t{drink.price}원')
+
+
     def sum_price(self):
-        pass
+        sum_value=0
+        for drink in self.order_drinl.drink:
+            sum_value+=drink.price
+            return sum_value
     def order_drink(self):
-        pass
+        while True:
+            self.show_menu() #메뉴 보여주자
+            drink = input('메뉴를 선택하세요: ') #메뉴 선택
+            drink= int(drink)-1
+            new_drink=self.menu[drink]
+            new_drink.order()
+            self.order_menu.appdend(new_drink)
+            is_add = input("더 주문사시겠습니까?(n :종료)")
+            if is_add =='n':
+                break
+        print(self)
+
 
 #민정이꺼 = Coffee('카페모카',2500)
 #민정이꺼.order()
 #print(민정이꺼)
+order = Order()
