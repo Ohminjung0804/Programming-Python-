@@ -18,7 +18,7 @@ def main():
         elif num =='2':
             recipebook_204.add_recipe()    #레시피 추가하기
         elif num =='3':
-            return #재료로 검색하기
+            recipebook_204.search_ingredient()  #재료로 검색하기
         elif num =='4':
             recipebook_204.show_recipe()    #전체 레시피 보여주기
         elif num =='5':
