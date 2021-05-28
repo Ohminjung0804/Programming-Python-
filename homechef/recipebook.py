@@ -3,6 +3,7 @@ from recipe import Recipe
 class Recipebook:
     def __init__(self):
         self.recipe_list = []
+        self.init_recipe()
 
     def add_recipe(self):
         # 추가할 레시피 이름 입력받자
@@ -16,13 +17,13 @@ class Recipebook:
                 print('이미 존재하는 레시피 입니다.')
                 return
 
-            # 중복되는 레시피가 없으면
-                # 레시피 생성하기
-            new_recipe = Recipe(name)
-            new_recipe.set_recipe()
+        # 중복되는 레시피가 없으면
+            # 레시피 생성하기
+        new_recipe = Recipe(name)
+        new_recipe.set_recipe()
 
-            # 레시피리스트에 생성한 레시피 추가하기
-            self.recipe_list.append(new_recipe)
+        # 레시피리스트에 생성한 레시피 추가하기
+        self.recipe_list.append(new_recipe)
 
     def show_recipe(self):
         for index, recipe in enumerate(self.recipe_list):
@@ -74,14 +75,20 @@ class Recipebook:
                 #해당 레시피 보여주기
                 print(recipe)
 
-        #입력한 재료가 포함되는 레시피 모두 보여주자
 
-
-
-
-
-
-
+    def init_recipe(self):  #기존 음식
+        떡볶이 = Recipe('떡볶이')
+        떡볶이.people = 2
+        떡볶이.video = 'youtube.com'
+        떡볶이.ingredient = {'떡':'200', '고추장':'100', '물':'100', '어묵':'100'}
+        self.recipe_list.append(떡볶이) #객체 추가 (string x)
+        카레 = Recipe('카레')
+        카레.ingredient = {'카레가루':'50', '감자':'200','당근':'100'}
+        self.recipe_list.append(카레)
+        파스타 = Recipe('파스타')
+        파스타.contents = '맛있게 만드세요!'
+        파스타.ingredient = {'면':'100','토마토소스':'200'}
+        self.recipe_list.append(파스타)
 
     def __str__(self):
         pass
