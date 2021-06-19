@@ -12,9 +12,15 @@ class Luck:
         self.bb = "\n\n\n\n\n\t\t\t\t\t\t*******************************************************************************************************************************************\n\n\n\n\n"
         self.tab = '\t\t\t\t\t\t\t\t\t\t\t\t'
 
-    def show_menu(self):
-        self.privacy_birth = input("본인의 생년월일을 입력하세요 (ex>04.04.11) : ")
+    def show_menu(self, null=None):
+        self.privacy_birth = input("본인의 생년월일을 입력하세요 (예>040411) : ")
+        if len(self.privacy_birth) != 6:
+            print('다시 입력하세요')
+            self.show_menu()
         self.privacy_name = input("이름을 입력하세요 : ")
+        if len(self.privacy_name) == 0 :
+            print('이름을 올바르게 입력하세요.')
+            self.show_menu()
 
         if self.privacy_name in self.impormation.keys():
             if self.privacy_birth in self.impormation.values():
@@ -46,7 +52,7 @@ class Luck:
             self.set_luck()
 
     def Love_Luck(self):
-        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}\t\t\t\t\t\t\t엔터를 쳐주세요 !{self.fp}{self.blank}')
 
         r = random.randint(1, 6)
@@ -54,7 +60,7 @@ class Luck:
             print(f"{self.blank}{self.fp}{self.tab}솔로 - 가까운 주변에 누군가가 지켜보고 있습니다.👀\n{self.tab}" +
                   f"상대이성이 주변을 빙빙 돌며 짝사랑을 하고 있거나 연락을 하지 않고, 단절된 누군가가 sns를 염탐하며 그리워하고 있습니다.\n{self.tab}"
                   f"이후 상대이성과 거리감이 좁혀지고 서로가 만날 인연이기 때문에 예상치 못한 곳에서 좋게 마주할 수 있습니다.🥰\n\n{self.tab}"
-                  f"커플 - 상대 연인이 바쁜 시기가 될 수 있습니다. 또는 상대 연인이 다른 지역으로 이사를 가는 상황이 생길 수 도있습니다.\n"
+                  f"커플 - 상대 연인이 바쁜 시기가 될 수 있습니다. 또는 상대 연인이 다른 지역으로 이사를 가는 상황이 생길 수 도있습니다.\n{self.tab}"
                   f"평소보다 데이트 횟수나 연락의 빈도수가 줄어들 수도 있습니다.😥 \n{self.tab}"
                   f"관계의 평화를 위해서 자신의 마음가짐을 편하게 갖고 여러분도 자신의 할 일에 대해 더 집중해보세요.{self.bb}")
         elif r == 2:
@@ -85,7 +91,7 @@ class Luck:
         input(f' \n\n\n\n\n{self.tab}\t\t\t\t\t\t엔터를 쳐주세요 !')
 
     def Test_Luck(self):
-        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}\t\t\t\t\t\t\t엔터를 쳐주세요 !{self.fp}{self.blank}')
         r = random.randint(1, 6)
         if r == 1:
@@ -110,7 +116,7 @@ class Luck:
         input(f' \n\n\n\n\n{self.tab}\t\t\t\t\t\t엔터를 쳐주세요 !')
 
     def Health_Luck(self):
-        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}\t\t\t\t\t\t\t엔터를 쳐주세요 !{self.fp}{self.blank}')
         r = random.randint(1, 6)
         if r == 1:
@@ -128,7 +134,7 @@ class Luck:
         input(f' \n\n\n\n\n{self.tab}\t\t\t\t\t\t엔터를 쳐주세요 !')
 
     def Daily_horoscope(self):
-        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}\t\t\t\t\t\t\t{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}\t\t\t\t\t\t\t엔터를 쳐주세요 !{self.fp}{self.blank}')
         r = random.randint(1, 6)
         if r == 1:

@@ -1,9 +1,6 @@
 from Luck import Luck
 from Constellation import Constellation
 
-
-
-
 def go():
     print("1.운세보기")
     print("2.별자리 운세")

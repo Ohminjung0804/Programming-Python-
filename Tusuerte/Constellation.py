@@ -13,8 +13,14 @@ class Constellation:
         self.tab = '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t'
 
     def show_menu(self):
-        self.privacy_birth = input("본인의 생년월일을 입력하세요 (ex>04.04.11) : ")
+        self.privacy_birth = input("본인의 생년월일을 6자리 입력하세요 (예>040411) : ")
+        if len(self.privacy_birth) != 6:
+            print('다시 입력하세요')
+            self.show_menu()
         self.privacy_name = input("이름을 입력하세요 : ")
+        if len(self.privacy_name) == 0 :
+            print('이름을 올바르게 입력하세요.')
+            self.show_menu()
 
         if self.privacy_name in self.impormation.keys():
             if self.privacy_birth in self.impormation.values():
@@ -67,7 +73,7 @@ class Constellation:
             self.Capricorn()
 
     def Aquarius(self):  # 물병자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -81,7 +87,7 @@ class Constellation:
                   f"{self.tab}무표정보다는 미소를 지으며 상대에게 말을 걸어보는건 어떨까요?😆{self.bb}")
 
     def Pisces(self):  # 물고기자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -95,7 +101,7 @@ class Constellation:
                   f"{self.tab}진지한 감정이나 분위기에서 벗어나 재미있는 일을하면서 시간을 보내면서 스트레스를 해소해 보아요!{self.bb}")
 
     def Aries(self):  # 양자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -108,7 +114,7 @@ class Constellation:
                   f"{self.tab}더 매력적이고 인기쟁이가 될 수 있을꺼 같아요{self.bb}")
 
     def Taurus(self):  # 황소자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -121,7 +127,7 @@ class Constellation:
                   f"{self.tab}그러면 좋은 결과가 있을 수도,,?{self.bb}")
 
     def Gemini(self):  # 쌍둥이자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -134,7 +140,7 @@ class Constellation:
                   f"{self.tab}예선에 붙을수도 있다는 그런 기운이 느껴져요{self.bb}")
 
     def Cancer(self):  # 게자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -149,7 +155,7 @@ class Constellation:
                   f"{self.tab}좋은 성과를 얻을 수 있을꺼 같아요❣{self.bb}")
 
     def Leo(self):  # 사자자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -163,7 +169,7 @@ class Constellation:
                   f"{self.tab}새로운 사람들도 만나고 내 일과 관련된 사람들도 만날수 있으니 명함을 꼭 챙기세요❕❕{self.bb}")
 
     def Virgo(self):  # 처녀자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -176,7 +182,7 @@ class Constellation:
                   f"{self.blank}{self.fp}{self.tab}부끄러워하지 않고 말을 하다보면 좋은 사람이라는 것을 알게 될꺼에요!{self.bb}")
 
     def Libra(self):  # 천칭자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -189,7 +195,7 @@ class Constellation:
                   f"{self.tab}그 기회를 놓치지 말고 꼭 잡으세요! 그 기회가 뭐든 주변 사람들 모두 당신의 편이라는 것도 잊지 않기!{self.bb}")
 
     def Scorpio(self):  # 전갈자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -203,7 +209,7 @@ class Constellation:
                   f"{self.tab}하던 일은 다 미뤄놓고 오늘 하루는 친구들과 맛있는것도 먹고 신나게 놀면서 리프레쉬하자구요~{self.bb}")
 
     def Sagittarius(self):  # 궁수자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
@@ -214,7 +220,7 @@ class Constellation:
             print(f"{self.blank}{self.fp}{self.tab}오늘은 좋은 사람을 만날꺼 같아요! 장소가 어디든 정말 좋은 사람을 만날꺼 같아요!{self.bb}")
 
     def Capricorn(self):  # 염소자리
-        print(f'{self.blank}{self.fp}{self.tab}님의 결과는 ...?')
+        print(f'{self.blank}{self.fp}{self.tab}{self.privacy_name}님의 결과는 ...?')
         input(f'{self.tab}엔터를 쳐주세요 !{self.fp}{self.blank}')
         text = random.randint(1, 4)
         if text == 1:
