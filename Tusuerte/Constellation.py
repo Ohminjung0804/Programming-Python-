@@ -1,7 +1,5 @@
 import random
 
-
-
 class Constellation:
     def __init__(self):
         self.privacy_birth = ''
@@ -119,7 +117,7 @@ class Constellation:
         text = random.randint(1, 4)
         if text == 1:
             print(
-                f"{self.blank}{self.fp}{self.tab}오늘은 모든 일을 다 했다고 해서 제출하거나 완벽하게 생각하지말고 끝까지 남은 부분을 수정하고 검토하는게 좋을꺼 같아요🤗{self.bb}")
+                f"{self.blank}{self.fp}오늘은 모든 일을 다 했다고 해서 제출하거나 완벽하게 생각하지말고 끝까지 남은 부분을 수정하고 검토하는게 좋을꺼 같아요🤗{self.bb}")
         elif text == 2:
             print(f"{self.blank}{self.fp}{self.tab}오늘은 주변에서 당신에게 관심이 모이는 날! 긍정적인 말을 할 수록 더 많은 관심이 모여요😁{self.bb}")
         else:

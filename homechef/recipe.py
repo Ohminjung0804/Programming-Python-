@@ -1,5 +1,5 @@
 class Recipe:
-    def __init__(self,name,):
+    def __init__(self,name):
         #재료, 재료의 개수(양)
         self.ingredient={}  #빈 딕셔너리 생성
         #내용
@@ -30,7 +30,7 @@ class Recipe:
         while True:
             ingredient = input("재료를 입력하세요: (입력예시: '감자 100')\n재료 입력이 끝났으면 엔터를 누르세요.")
             if ingredient =='':
-                break;
+                break
             ingredient_name, ingredient_gram = ingredient.split()
             self.ingredient[ingredient_name]=ingredient_gram
             #{'감자' : '200', '당근' : '100'} 딕셔너리

@@ -1,5 +1,4 @@
 import random
-from Constellation import Constellation
 
 
 class Luck:
@@ -100,7 +99,7 @@ class Luck:
                              f"조금 더 힘을 내고 집중해서 문제를 푼다면 그만한 결과가 있을 것입니다.{self.bb}")
         elif r == 2:
             print(f"{self.blank}{self.fp}{self.tab}시험에 대해 너무 부담을 갖고 있는 것은 아닌지요.\n{self.tab}"
-                             f"그렇기 때문에 어느 정도는 긴장을 풀고 여유를 가진다고 해서 나쁜 일은 아닐 것입니다.")
+                             f"그렇기 때문에 어느 정도는 긴장을 풀고 여유를 가진다고 해서 나쁜 일은 아닐 것입니다.{self.bb}")
         elif r == 3:
             print(f"{self.blank}{self.fp}{self.tab}변화를 단행하세요. 슬슬 이제까지의 체제에 질릴 때가 되었습니다.\n{self.tab}"
                              f"그 동안 열심히 해온 것은 좋으나 조금씩 지치고 질려가고 있는 자신을 느끼는 날입니다.\n{self.tab}"

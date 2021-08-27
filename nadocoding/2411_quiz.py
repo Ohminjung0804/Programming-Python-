@@ -291,33 +291,72 @@
 
 
 
+# '''
+# Quiz4-2. [학생퀴즈] get_compliment() 함수를 만든다. 이 함수에 '고구마' 또는 '맛있는'이 들어가는 말을 입력하면 그에 해당하는 답변을 리턴한다.
+# '고구마'가 들어가는 말을 입력하면 '왓쇼이!', '맛있는'이 들어가는 말을 입력하면 '우마이!',
+# '놀랄 만한', '황당한', '굉장한'이 들어가는 말을 입력하면 '요모야..!', 특정 단어가 하나라도 들어가지 않는다면 '으무!'를 리턴한다.
+# '''
+# def get_compliment(answer):
+#     if '고구마' in answer:
+#         return "왓쇼이!"
+#     elif '맛있는' in answer:
+#         return "우마이!"
+#     elif '놀랄 만한' in answer:
+#         return "요모야..!"
+#     elif '황당한' in answer:
+#         return "요모야..!"
+#     elif '굉장한' in answer:
+#         return "요모야..!"
+#     else:
+#         return "으무!"
+#
+#
+#
+#
+# result = get_compliment('고구마 된장국')
+# print(result) # 왓쇼이!
+# result = get_compliment('맛있는 크레이프')
+# print(result) # 우마이!
+# result = get_compliment('놀랄 만한 상황')
+# print(result) # 요모야..!
+# result = get_compliment('좋은 마음가짐이다!')
+# print(result) # 으무!
+
+
+
 '''
-Quiz4-2. [학생퀴즈] get_compliment() 함수를 만든다. 이 함수에 '고구마' 또는 '맛있는'이 들어가는 말을 입력하면 그에 해당하는 답변을 리턴한다.
-'고구마'가 들어가는 말을 입력하면 '왓쇼이!', '맛있는'이 들어가는 말을 입력하면 '우마이!',
-'놀랄 만한', '황당한', '굉장한'이 들어가는 말을 입력하면 '요모야..!', 특정 단어가 하나라도 들어가지 않는다면 '으무!'를 리턴한다.
+Quiz5-1. 모듈이란?
+ 필요한 파일들의 묶음
+
+Quiz5-2. 패키지란?
+ 모듈들을 모아둔 집합
+
+
+Quiz5-3. theater_module.py 모듈(파일)의 price 함수를 p학번 라는 이름으로 호출 하도록 import문을 작성하세요
+ from theater_module import price as p학번
+
+
+Quiz5-4. __all__의 역할은?
+ import를 할 때 모든 것(*)을 가져올 때, 모듈 공개 범위를 설정해줌
+
+Quiz5-5. 지금 파이썬 파일을 직접실행할 때만 실행되고, 다른 모듈에서 import할 때는 실행되지 않도록 하는 제어문은?
+ if __name__ == __main__:
+    print("모듈 직접 실행)
+
+Quiz5-6. travel 패키지(폴더) 안에 vietnam.py 모듈(파일) 안의
+VietnamPackage 클래스를 생성하고 detail 함수를 호출하는
+< 가 >, < 나 >, < 다 > 에 들어갈 각 방법은?
+ import travel.vietnam
+< 가 >
+ trip = travel.vietnam.VietnamPackage()
+ trip.detail()
+
+from travel import vietnam
+< 나 >
+ trip = veitnam.VietnamPackage()
+ trip.detail()
+
+from travel.vietnam import VietnamPackage
+< 다 >
+ VietnamePackage.detail()
 '''
-def get_compliment(answer):
-    if '고구마' in answer:
-        return "왓쇼이!"
-    elif '맛있는' in answer:
-        return "우마이!"
-    elif '놀랄 만한' in answer:
-        return "요모야..!"
-    elif '황당한' in answer:
-        return "요모야..!"
-    elif '굉장한' in answer:
-        return "요모야..!"
-    else:
-        return "으무!"
-
-
-
-
-result = get_compliment('고구마 된장국')
-print(result) # 왓쇼이!
-result = get_compliment('맛있는 크레이프')
-print(result) # 우마이!
-result = get_compliment('놀랄 만한 상황')
-print(result) # 요모야..!
-result = get_compliment('좋은 마음가짐이다!')
-print(result) # 으무!
