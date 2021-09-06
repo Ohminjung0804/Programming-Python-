@@ -29,3 +29,83 @@ print(now.hour)
 birthday = datetime.datetime(2004, 11, 29)
 print(birthday)
 print(now - birthday)
+print('-'*20)
+
+#1
+price = 62421
+print(round(price,-2))
+
+print(price // 100*100)
+print(price - price%100)
+print(math.floor(price/100)*100)
+print(int(price/100)*100)
+
+print('-'*10)
+#2
+score =  56
+print(round(score,-1), "점")
+print(round(score/100)*10)
+
+print('-'*10)
+#3
+result = []
+for i in range(6):
+    result .append(random.randint(1,45))
+print(result)
+
+print(random.sample(range(1, 45 + 1),6))
+
+print('-'*10)
+#4
+list2 = [1,2,3,4,5,6,7,8,9]
+list3 = []
+for i in range(3):
+    number = random.choice(list2)
+    list3.append(str(number))
+    list2.remove(number)
+print(list3[0] + list3[1] + list3[2])
+
+list_r = random.sample(range(1,9+1),3)
+print("".join(str(n) for n in list_r))  #"".join() - 괄호 안 문자열을 연결
+print("".join(map(str, list_r)))
+print('-'*10)
+#5
+import datetime
+birth = datetime.datetime(2004, 8, 4)
+print(now - birth)
+
+print('-'*10)
+#6
+from datetime import datetime
+christmas = datetime(2021, 12,25)
+print(christmas - now)
+
+print('-'*10)
+#7
+mybirth = datetime(2022,8,4)
+print(mybirth - now)
+
+if mybirth < now:
+    mybirth = mybirth.replace(year=2022)
+    # mybirth.year = mybirth.year + 1
+
+print(mybirth - now)
+
+print('-'*10)
+#8
+#마지막 번호 묻자
+last_number = int(input("마지막 번호는?"))
+#1~마지막 번호 까지 숫자 리스트 만들자
+list_class = list(range(1, last_number+1))
+
+#반복
+while True:
+    exclude_number = input("뺄 번호는? (enter치면 그만 빼기)")
+    if exclude_number == '':
+        break
+    list_class.remove(int(exclude_number))
+
+random.shuffle(list_class)
+print('자리\t학생번호')
+for i, number in enumerate(list_class):
+    print(f'{i+1}\t{number}')
