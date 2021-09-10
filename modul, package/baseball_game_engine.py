@@ -23,13 +23,14 @@ def check(guess, answer):
                     strike += 1
                 else:       #자리가 다르면
                     ball += 1
-
     return strike,ball
 
 
 if __name__ == '__main__':
+
     answer = make_answer()
     print(answer)
+    check()
     strike, ball = check("831","934")
     print(strike, ball)     #1 0
     strike, ball = check("431","934")
