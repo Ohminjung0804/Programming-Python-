@@ -1,3 +1,5 @@
-f = open('text.txt','w')
+f = open('text.txt','w', encoding='utf-8')
 f.write('하얀색')
+f.write('\n')
+f.write('북극곰')
 f.close()
