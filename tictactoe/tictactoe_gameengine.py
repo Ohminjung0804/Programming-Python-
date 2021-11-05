@@ -8,7 +8,7 @@ class TictactoeGameEngine:
         # print('  '.join(self.board[6:9]))
 
         for i, v in enumerate(self.board):
-            print(v + ' ')
+            print(v + ' ', end='')
             if i % 3 == 2:
                 print()
 
@@ -66,7 +66,7 @@ class TictactoeGameEngine:
             return 'd'
 
     def change_turn(self):
-        self.turn = '0' if self.turn == 'X' else 'X'
+        self.turn = 'O' if self.turn == 'X' else 'X'
 
 if __name__ == '__main__':
     game_engine = TictactoeGameEngine()
