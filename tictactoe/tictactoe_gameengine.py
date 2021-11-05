@@ -23,11 +23,11 @@ class TictactoeGameEngine:
         #가로
         for row in range(1, 3 + 1):
             if self.board[self.position_to_index(row,1)] == self.board[self.position_to_index(row,2)] == self.board[self.position_to_index(row,3)] == self.turn:
-                return '-'
+                return self.turn
 
         for col in range(1, 3 + 1):
             if self.board[self.position_to_index(1, col)] == self.board[self.position_to_index(2, col)] == self.board[self.position_to_index(3, col)] == self.turn:
-                return '|'
+                return self.turn
 
         # 가로 세로
         #  - 3줄 : 1,2,3 | 4,5,6 | 7,8,9 -> 0,1,2 | 3,4,5 | 6,7,8
@@ -44,9 +44,9 @@ class TictactoeGameEngine:
 
         # /
         if self.board[self.position_to_index(1, 3)] == self.board[self.position_to_index(2, 2)] == self.board[self.position_to_index(3, 1)] == self.turn:
-            return '/'
+            return self.turn
         if self.board[self.position_to_index(1, 1)] == self.board[self.position_to_index(2, 2)] == self.board[self.position_to_index(3, 3)] == self.turn:
-            return '\\'
+            return self.turn
 
         # if self.board[2] == 'X' and self.board[4] == 'X' and self.board[6] == 'X':
         #     return print('X 승리')
@@ -59,10 +59,11 @@ class TictactoeGameEngine:
         #     return print('X 승리')
 
         # 끝나는 경우 : 무승부(승자가 없는 상태로 놓을 자리가 없음), 승자 결정(승자가 있음)
-        if self.board[0] != '.' and self.board[1] != '.' and self.board[2] != '.' and \
-                self.board[3] != '.' and self.board[4] != '.' and self.board[5] != '.' and \
-                self.board[6] != '.' and self.board[7] != '.' and self.board[8] != '.':
-            return print('무승부')
+        # if self.board[0] != '.' and self.board[1] != '.' and self.board[2] != '.' and \
+        #         self.board[3] != '.' and self.board[4] != '.' and self.board[5] != '.' and \
+        #         self.board[6] != '.' and self.board[7] != '.' and self.board[8] != '.':
+        if not '.' in self.board:
+            return 'd'
 
     def change_turn(self):
         self.turn = '0' if self.turn == 'X' else 'X'
